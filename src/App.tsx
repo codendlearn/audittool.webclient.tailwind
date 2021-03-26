@@ -2,35 +2,32 @@ import { Transition } from '@headlessui/react'
 import React, { useState } from 'react'
 import Header from './Header'
 import Sidebar from './Sidebar'
+import Footer from './Components/Footer'
 
 function App() {
   const [showSideBar, setShowSideBar] = useState(true)
   return (
-    <div className='min-h-screen flex bg-gray-300'>
+    <div className='min-h-screen text-gray-700 flex bg-gray-300'>
       <Transition
         show={showSideBar}
         className='w-60 flex'
-        enter='transition ease-in-out duration-300 transform'
-        enterFrom='-translate-x-full'
-        enterTo='translate-x-0'
-        leave='transition ease-in-out duration-300 transform'
-        leaveFrom='translate-x-0'
-        leaveTo='-translate-x-full'
+        enter='transition-all ease-in-out duration-700 transform'
+        enterFrom='-ml-60'
+        enterTo='ml-0'
+        leave='transition-all ease-in-out duration-700 transform'
+        leaveFrom='ml-0'
+        leaveTo='-ml-60'
       >
         <Sidebar />
       </Transition>
-      <div className='flex flex-col w-full space-y-6'>
-        <Header />
-        <main className=''>Main</main>
-        <footer className=''>Footer</footer>
-
-        <button
-          onClick={() => {
+      <div className='flex flex-col justify-between w-full space-y-6'>
+        <Header
+          onSideBarToggle={() => {
             setShowSideBar(!showSideBar)
           }}
-        >
-          hide
-        </button>
+        />
+        <main className='sm:px-6 lg:px-8'>Main</main>
+        <Footer />
       </div>
     </div>
   )
