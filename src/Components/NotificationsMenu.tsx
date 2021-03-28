@@ -38,15 +38,15 @@ const NotificationsMenu = () => {
             >
               <Menu.Items
                 static
-                className=' absolute right-0 w-96 mt-4 origin-top-right bg-gray-900 text-gray-300 border border-gray-200 divide-y divide-gray-100 rounded-md shadow-2xl outline-none container body-font'
+                className=' absolute right-0 w-96 mt-4 origin-top-right bg-gray-800 text-gray-300 border border-gray-200 divide-y divide-gray-100 rounded-md shadow-2xl outline-none container body-font'
               >
                 <h2 className='tracking-widest text-md text-center font-bold p-2 title-font text-indigo-400'>
                   4 new notifications
                 </h2>
-                <div className='flex px-8 py-2 items-center opacity-80 hover:opacity-100  cursor-pointer'>
+                <div className='flex px-8 py-2 items-center opacity-70 hover:opacity-100  cursor-pointer'>
                   <Menu.Item>
                     <>
-                      <div className='w-12 h-12 sm:mr-6 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 flex-shrink-0'>
+                      <div className='w-12 h-12 sm:mr-6 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-600 text-indigo-400 flex-shrink-0'>
                         <svg
                           fill='none'
                           stroke='currentColor'
@@ -73,7 +73,7 @@ const NotificationsMenu = () => {
                 <div className='flex px-8 py-2 items-center opacity-80 hover:opacity-100  cursor-pointer'>
                   <Menu.Item>
                     <>
-                      <div className='w-12 h-12 sm:mr-6 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 flex-shrink-0'>
+                      <div className='w-12 h-12 sm:mr-6 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-600 text-indigo-400 flex-shrink-0'>
                         <svg
                           fill='none'
                           stroke='currentColor'
@@ -100,7 +100,7 @@ const NotificationsMenu = () => {
                 <div className='flex px-8 py-2 items-center opacity-80 hover:opacity-100  cursor-pointer'>
                   <Menu.Item>
                     <>
-                      <div className='w-12 h-12 sm:mr-6 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-800 text-indigo-400 flex-shrink-0'>
+                      <div className='w-12 h-12 sm:mr-6 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-gray-600 text-indigo-400 flex-shrink-0'>
                         <svg
                           fill='none'
                           stroke='currentColor'

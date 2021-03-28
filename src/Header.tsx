@@ -16,7 +16,7 @@ const Header = (props: any) => {
   }, [showProfileMenu, showNotificationMenu])
 
   return (
-    <header className='shadow-md  sm:px-4 lg:px-6 bg-gray-200 body-font flex flex-wrap justify-between flex-row items-center'>
+    <header className='shadow-md sm:px-4 lg:px-6 bg-gray-200 body-font flex flex-wrap justify-between flex-row items-center'>
       <button
         className='py-3 focus:outline-none'
         onClick={() => {
@@ -45,7 +45,7 @@ const Header = (props: any) => {
           id='full-name'
           placeholder='search'
           name='full-name'
-          className='hidden md:inline w-44 rounded focus:border-opacity-10 border border-gray-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 bg-transparent outline-none leading-8 transition-colors duration-200 ease-in-out'
+          className='hidden md:inline w-44 rounded focus:border-opacity-10 px-2 border border-gray-800 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 bg-transparent outline-none leading-8 transition-colors duration-200 ease-in-out'
         />
       </div>
 
