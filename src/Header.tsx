@@ -16,7 +16,7 @@ const Header = (props: any) => {
   }, [showProfileMenu, showNotificationMenu])
 
   return (
-    <header className='shadow-md sm:px-4 lg:px-6 bg-gray-200 body-font flex flex-wrap justify-between flex-row items-center'>
+    <header className='shadow-md px-2 bg-gray-200 body-font flex flex-wrap justify-between flex-row items-center'>
       <button
         className='py-3 focus:outline-none'
         onClick={() => {

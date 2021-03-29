@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { INavLinlProps } from '../../Model/INavLinlProps'
 
 export const NavLink: React.FC<INavLinlProps> = (props) => {
@@ -8,7 +9,7 @@ export const NavLink: React.FC<INavLinlProps> = (props) => {
   return (
     <span
       className={clsx(
-        ' opacity-60 hover:opacity-100 py-2 px-2 cursor-pointer border-l-4 border-transparent',
+        ' opacity-60 hover:opacity-100 py-3 px-2 cursor-pointer border-l-4 border-transparent',
         props.active && 'bg-gray-800 border-gray-300'
       )}
     >
@@ -36,7 +37,7 @@ export const NavLink: React.FC<INavLinlProps> = (props) => {
           )}
         </div>
         <div className='mx-3 flex items-center justify-between mr-6'>
-          {props.text}
+          <Link to={props.path}>{props.text}</Link>
         </div>
       </span>
     </span>

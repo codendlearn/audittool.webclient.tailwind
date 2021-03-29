@@ -6,18 +6,12 @@ import { INavLinlProps } from '../../Model/INavLinlProps'
 export const NavLinkWithSubMenu: React.FC<{
   title: string
   submenu: INavLinlProps[]
-  active?: boolean
   icon?: ReactNode
 }> = (props) => {
   const [collapse, setcollapse] = useState(false)
 
   return (
-    <span
-    // className={clsx(
-    //   ' hover:bg-opacity-5 border-l-4 border-transparent py-2 px-2 opacity-60 hover:opacity-100 cursor-pointer',
-    //   props.active && 'bg-gray-800 border-gray-300'
-    // )}
-    >
+    <>
       <span
         className='flex'
         onClick={() => {
@@ -26,8 +20,9 @@ export const NavLinkWithSubMenu: React.FC<{
       >
         <div
           className={clsx(
-            'flex items-center bg-gradient-to-r from-gray-800 to-gray-900 justify-between border-l-4 w-full border-transparent py-2 px-2 opacity-60 hover:opacity-100 cursor-pointer',
-            props.active && 'bg-gray-800 border-gray-300'
+            'flex items-center  justify-between border-l-4 w-full border-transparent py-3 px-2 opacity-60 hover:opacity-100 cursor-pointer',
+            props.submenu?.some((x) => x.active) &&
+              'bg-gradient-to-r from-gray-800 to-gray-900 bg-gray-800 border-gray-300'
           )}
         >
           <div className='flex'>
@@ -81,11 +76,11 @@ export const NavLinkWithSubMenu: React.FC<{
           leaveFrom='max-h-56'
           leaveTo='max-h-0'
         >
-          <ul className={'mt-2 space-y-2'}>
+          <ul className={''}>
             {props.submenu.map((c) => (
               <li
                 className={clsx(
-                  'ml-12 opacity-60 hover:opacity-100  cursor-pointer',
+                  'ml-12 py-2 opacity-60 hover:opacity-100  cursor-pointer',
                   c.active && 'text-blue-500'
                 )}
               >
@@ -95,6 +90,6 @@ export const NavLinkWithSubMenu: React.FC<{
           </ul>
         </Transition>
       )}
-    </span>
+    </>
   )
 }

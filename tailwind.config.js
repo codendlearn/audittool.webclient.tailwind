@@ -10,5 +10,7 @@ module.exports = {
       height: ['hover', 'focus'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }

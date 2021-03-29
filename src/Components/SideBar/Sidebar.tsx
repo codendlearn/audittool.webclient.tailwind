@@ -5,14 +5,35 @@ import About from '../../Pages/About'
 import Dashboard from '../../Pages/Dashboard'
 import { NavLink } from './NavLink'
 import { NavLinkWithSubMenu } from './NavLinkWithSubMenu'
+import Play from '../../Play'
 
 const Sidebar = (props: any) => {
   const [currentLink, setcurrentLink] = useState('Home')
 
   return (
-    <aside className='flex flex-col justify-between h-screen overflow-y-auto shadow-lg transition-all transform w-64 lg:w-72 max-w-4xl bg-gray-900 text-gray-400'>
+    <aside className='z-50 flex flex-col justify-between w-full h-full overflow-x-hidden overflow-y-auto text-gray-400 transition-all transform bg-gray-900 shadow-lg'>
       <section>
-        <h1 className=' text-2xl p-4 mb-6 select-none'>Audit Tool</h1>
+        <div className='flex items-center justify-between p-4 mb-6'>
+          <h1 className='text-2xl select-none'>Audit Tool</h1>
+          {props.close && (
+            <button onClick={() => props.close()} className='outline-none'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                width='26'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M6 18L18 6M6 6l12 12'
+                />
+              </svg>
+            </button>
+          )}
+        </div>
         <nav className='flex flex-col'>
           <NavLink
             icon={
@@ -31,6 +52,7 @@ const Sidebar = (props: any) => {
               </svg>
             }
             text='Home'
+            path='/home'
             component={Home}
           />
           <NavLink
@@ -50,11 +72,11 @@ const Sidebar = (props: any) => {
               </svg>
             }
             text='Dashboard'
+            path='/dashboard'
             component={Dashboard}
           />
           <NavLinkWithSubMenu
             title='Phases'
-            active={true}
             icon={
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -71,14 +93,18 @@ const Sidebar = (props: any) => {
               </svg>
             }
             submenu={[
-              { text: 'Phase 1', active: true, component: { Home } },
-              { text: 'Phase 3', component: { Home } },
-              { text: 'Phase 2', component: { Home } },
+              {
+                text: 'Phase 1',
+                path: '/phase1',
+                active: true,
+                component: { Home },
+              },
+              { text: 'Phase 3', path: '/phase1', component: { Home } },
+              { text: 'Phase 2', path: '/phase1', component: { Home } },
             ]}
-          />{' '}
+          />
           <NavLinkWithSubMenu
             title='Phases'
-            active={true}
             icon={
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -95,14 +121,18 @@ const Sidebar = (props: any) => {
               </svg>
             }
             submenu={[
-              { text: 'Phase 1', active: true, component: { Home } },
-              { text: 'Phase 3', component: { Home } },
-              { text: 'Phase 2', component: { Home } },
+              {
+                text: 'Phase 1',
+                path: '/phase1',
+                active: true,
+                component: { Home },
+              },
+              { text: 'Phase 3', path: '/phase1', component: { Home } },
+              { text: 'Phase 2', path: '/phase1', component: { Home } },
             ]}
-          />{' '}
+          />
           <NavLinkWithSubMenu
             title='Phases'
-            active={true}
             icon={
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -119,14 +149,18 @@ const Sidebar = (props: any) => {
               </svg>
             }
             submenu={[
-              { text: 'Phase 1', active: true, component: { Home } },
-              { text: 'Phase 3', component: { Home } },
-              { text: 'Phase 2', component: { Home } },
+              {
+                text: 'Phase 1',
+                path: '/phase1',
+                active: true,
+                component: { Home },
+              },
+              { text: 'Phase 3', path: '/phase1', component: { Home } },
+              { text: 'Phase 2', path: '/phase1', component: { Home } },
             ]}
-          />{' '}
+          />
           <NavLinkWithSubMenu
             title='Phases'
-            active={true}
             icon={
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -143,105 +177,14 @@ const Sidebar = (props: any) => {
               </svg>
             }
             submenu={[
-              { text: 'Phase 1', active: true, component: { Home } },
-              { text: 'Phase 3', component: { Home } },
-              { text: 'Phase 2', component: { Home } },
-            ]}
-          />{' '}
-          <NavLinkWithSubMenu
-            title='Phases'
-            active={true}
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-                />
-              </svg>
-            }
-            submenu={[
-              { text: 'Phase 1', active: true, component: { Home } },
-              { text: 'Phase 3', component: { Home } },
-              { text: 'Phase 2', component: { Home } },
-            ]}
-          />{' '}
-          <NavLinkWithSubMenu
-            title='Phases'
-            active={true}
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-                />
-              </svg>
-            }
-            submenu={[
-              { text: 'Phase 1', active: true, component: { Home } },
-              { text: 'Phase 3', component: { Home } },
-              { text: 'Phase 2', component: { Home } },
-            ]}
-          />{' '}
-          <NavLinkWithSubMenu
-            title='Phases'
-            active={true}
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-                />
-              </svg>
-            }
-            submenu={[
-              { text: 'Phase 1', active: true, component: { Home } },
-              { text: 'Phase 3', component: { Home } },
-              { text: 'Phase 2', component: { Home } },
-            ]}
-          />{' '}
-          <NavLinkWithSubMenu
-            title='Phases'
-            active={true}
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-                />
-              </svg>
-            }
-            submenu={[
-              { text: 'Phase 1', active: true, component: { Home } },
-              { text: 'Phase 3', component: { Home } },
-              { text: 'Phase 2', component: { Home } },
+              {
+                text: 'Phase 1',
+                path: '/phase1',
+                active: false,
+                component: { Home },
+              },
+              { text: 'Phase 3', path: '/phase1', component: { Home } },
+              { text: 'Phase 2', path: '/phase1', component: { Home } },
             ]}
           />
           <NavLink
@@ -262,17 +205,39 @@ const Sidebar = (props: any) => {
             }
             active={false}
             text='About'
+            path='/about'
             component={About}
+          />
+          <NavLink
+            icon={
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                fill='none'
+                viewBox='0 0 24 24'
+                stroke='currentColor'
+              >
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                />
+              </svg>
+            }
+            active={false}
+            text='Play'
+            path='/play'
+            component={Play}
           />
         </nav>
       </section>
-      <section className='mt-3 hover:opacity-95 xs:hidden opacity-75 body-font'>
-        <span className='my-2 bg-gradient-to-r from-gray-400 to-gray-900 w-full h-1 opacity-40 block' />
+      <section className='mt-3 opacity-75 hover:opacity-95 xs:hidden body-font'>
+        <span className='block w-full h-1 my-2 bg-gradient-to-r from-gray-400 to-gray-900 opacity-40' />
         {/* <hr className='m-3 opacity-40' /> */}
-        <div className='container p-2 flex flex-wrap'>
-          <div className='flex rounded-lg h-full bg-gradient-to-r from-gray-800 to-gray-900  bg-opacity-60 p-8 flex-col'>
+        <div className='container flex flex-wrap p-2'>
+          <div className='flex flex-col h-full p-8 rounded-lg bg-gradient-to-r from-gray-800 to-gray-900 bg-opacity-60'>
             <div className='flex items-center mb-3'>
-              <div className='w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0'>
+              <div className='inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3 text-white bg-indigo-500 rounded-full'>
                 <svg
                   fill='none'
                   stroke='currentColor'
@@ -285,12 +250,11 @@ const Sidebar = (props: any) => {
                   <path d='M22 12h-4l-3 9L9 3l-3 9H2'></path>
                 </svg>
               </div>
-              <h2 className='text-lg title-font font-medium'>Shooting Stars</h2>
+              <h2 className='text-lg font-medium title-font'>Shooting Stars</h2>
             </div>
             <div className='flex-grow'>
-              <p className='leading-relaxed text-base'>
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine.
+              <p className='text-base leading-relaxed'>
+                Blue bottle post-ironic four dollar toast vegan taxidermy.
               </p>
 
               <button className='outline-none border border-indigo-400 rounded p-1.5 mt-3 hover:bg-indigo-500 text-indigo-400 hover:text-gray-100'>

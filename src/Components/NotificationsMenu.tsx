@@ -38,7 +38,7 @@ const NotificationsMenu = () => {
             >
               <Menu.Items
                 static
-                className=' absolute right-0 w-96 mt-4 origin-top-right bg-gray-800 text-gray-300 border border-gray-200 divide-y divide-gray-100 rounded-md shadow-2xl outline-none container body-font'
+                className=' absolute right-0 w-96 mt-4 origin-top-right bg-gray-800 text-gray-300  divide-y divide-gray-700 rounded-md shadow-2xl outline-none container body-font'
               >
                 <h2 className='tracking-widest text-md text-center font-bold p-2 title-font text-indigo-400'>
                   4 new notifications
