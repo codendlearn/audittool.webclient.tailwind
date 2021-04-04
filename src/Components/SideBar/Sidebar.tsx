@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 
-import Home from '../../Pages/Home'
-import About from '../../Pages/About'
-import Dashboard from '../../Pages/Dashboard'
 import { NavLink } from './NavLink'
-import { NavLinkWithSubMenu } from './NavLinkWithSubMenu'
-import Play from '../../Play'
+import { NavMenu } from '../../Data/NavMenu'
+import { XIcon } from '@heroicons/react/outline'
+import NavLinkWithSubMenu from './NavLinkWithSubMenu'
 
 const Sidebar = (props: any) => {
   const [currentLink, setcurrentLink] = useState('Home')
@@ -17,218 +15,15 @@ const Sidebar = (props: any) => {
           <h1 className='text-2xl select-none'>Audit Tool</h1>
           {props.close && (
             <button onClick={() => props.close()} className='outline-none'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                width='26'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M6 18L18 6M6 6l12 12'
-                />
-              </svg>
+              <XIcon width={26} />
             </button>
           )}
         </div>
         <nav className='flex flex-col'>
-          <NavLink
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'
-                />
-              </svg>
-            }
-            text='Home'
-            path='/home'
-            component={Home}
-          />
-          <NavLink
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z'
-                />
-              </svg>
-            }
-            text='Dashboard'
-            path='/dashboard'
-            component={Dashboard}
-          />
-          <NavLinkWithSubMenu
-            title='Phases'
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-                />
-              </svg>
-            }
-            submenu={[
-              {
-                text: 'Phase 1',
-                path: '/phase1',
-                active: true,
-                component: { Home },
-              },
-              { text: 'Phase 3', path: '/phase1', component: { Home } },
-              { text: 'Phase 2', path: '/phase1', component: { Home } },
-            ]}
-          />
-          <NavLinkWithSubMenu
-            title='Phases'
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-                />
-              </svg>
-            }
-            submenu={[
-              {
-                text: 'Phase 1',
-                path: '/phase1',
-                active: true,
-                component: { Home },
-              },
-              { text: 'Phase 3', path: '/phase1', component: { Home } },
-              { text: 'Phase 2', path: '/phase1', component: { Home } },
-            ]}
-          />
-          <NavLinkWithSubMenu
-            title='Phases'
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-                />
-              </svg>
-            }
-            submenu={[
-              {
-                text: 'Phase 1',
-                path: '/phase1',
-                active: true,
-                component: { Home },
-              },
-              { text: 'Phase 3', path: '/phase1', component: { Home } },
-              { text: 'Phase 2', path: '/phase1', component: { Home } },
-            ]}
-          />
-          <NavLinkWithSubMenu
-            title='Phases'
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'
-                />
-              </svg>
-            }
-            submenu={[
-              {
-                text: 'Phase 1',
-                path: '/phase1',
-                active: false,
-                component: { Home },
-              },
-              { text: 'Phase 3', path: '/phase1', component: { Home } },
-              { text: 'Phase 2', path: '/phase1', component: { Home } },
-            ]}
-          />
-          <NavLink
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-                />
-              </svg>
-            }
-            active={false}
-            text='About'
-            path='/about'
-            component={About}
-          />
-          <NavLink
-            icon={
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                fill='none'
-                viewBox='0 0 24 24'
-                stroke='currentColor'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-                />
-              </svg>
-            }
-            active={false}
-            text='Play'
-            path='/play'
-            component={Play}
-          />
+          {NavMenu.map((navM) => {
+            if (navM.subMenu) return <NavLinkWithSubMenu {...navM} />
+            else return <NavLink {...navM} />
+          })}
         </nav>
       </section>
       <section className='mt-3 opacity-75 hover:opacity-95 xs:hidden body-font'>
