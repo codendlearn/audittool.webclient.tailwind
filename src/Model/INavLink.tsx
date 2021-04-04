@@ -6,4 +6,5 @@ export default interface INavLink {
   active?: boolean
   iconName?: string
   subMenu?: INavLink[]
+  isSubMenu?: boolean
 }

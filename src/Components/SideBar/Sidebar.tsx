@@ -2,7 +2,12 @@ import React, { useState } from 'react'
 
 import { NavLink } from './NavLink'
 import { NavMenu } from '../../Data/NavMenu'
-import { XIcon } from '@heroicons/react/outline'
+import {
+  ArrowRightIcon,
+  EmojiHappyIcon,
+  StarIcon,
+  XIcon,
+} from '@heroicons/react/outline'
 import NavLinkWithSubMenu from './NavLinkWithSubMenu'
 
 const Sidebar = (props: any) => {
@@ -33,17 +38,7 @@ const Sidebar = (props: any) => {
           <div className='flex flex-col h-full p-8 rounded-lg bg-gradient-to-r from-gray-800 to-gray-900 bg-opacity-60'>
             <div className='flex items-center mb-3'>
               <div className='inline-flex items-center justify-center flex-shrink-0 w-8 h-8 mr-3 text-white bg-indigo-500 rounded-full'>
-                <svg
-                  fill='none'
-                  stroke='currentColor'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
-                  stroke-width='2'
-                  className='w-5 h-5'
-                  viewBox='0 0 24 24'
-                >
-                  <path d='M22 12h-4l-3 9L9 3l-3 9H2'></path>
-                </svg>
+                <StarIcon width={24} />
               </div>
               <h2 className='text-lg font-medium title-font'>Shooting Stars</h2>
             </div>
@@ -54,17 +49,10 @@ const Sidebar = (props: any) => {
 
               <button className='outline-none border border-indigo-400 rounded p-1.5 mt-3 hover:bg-indigo-500 text-indigo-400 hover:text-gray-100'>
                 Learn More
-                <svg
-                  fill='none'
-                  stroke='currentColor'
-                  stroke-linecap='round'
-                  stroke-linejoin='round'
-                  stroke-width='2'
-                  className='inline-block w-4 h-4 ml-2'
-                  viewBox='0 0 24 24'
-                >
-                  <path d='M5 12h14M12 5l7 7-7 7'></path>
-                </svg>
+                <ArrowRightIcon
+                  className='inline ml-4 text-center'
+                  width={16}
+                />
               </button>
             </div>
           </div>

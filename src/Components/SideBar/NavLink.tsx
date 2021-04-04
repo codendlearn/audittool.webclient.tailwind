@@ -1,4 +1,4 @@
-import { ChartBarIcon, HomeIcon } from '@heroicons/react/outline'
+import { BookOpenIcon, ChartBarIcon, HomeIcon } from '@heroicons/react/outline'
 import clsx from 'clsx'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -8,6 +8,7 @@ import INavLink from '../../Model/INavLink'
 const iconmap = new Map([
   ['Home', <HomeIcon />],
   ['Dashboard', <ChartBarIcon />],
+  ['BookOpen', <BookOpenIcon />],
 ])
 
 export const NavLink: React.FC<INavLink> = (props) => {
@@ -16,7 +17,9 @@ export const NavLink: React.FC<INavLink> = (props) => {
   return (
     <span
       className={clsx(
-        'flex items-center  justify-between border-l-4 w-full border-transparent py-3 px-2 opacity-60 hover:opacity-100 cursor-pointer',
+        'flex items-center justify-between border-l-4 w-full border-transparent py-3 px-2 opacity-60 hover:opacity-100 cursor-pointer',
+        props.isSubMenu &&
+          'ml-6 border-l border-dashed border-gray-100 border-opacity-50',
         props.active &&
           'bg-gradient-to-r from-gray-800 to-gray-900 bg-gray-800 border-gray-300'
       )}

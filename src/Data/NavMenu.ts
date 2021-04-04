@@ -18,4 +18,16 @@ export const NavMenu: INavLink[] = [
       { text: 'Phase1', iconName: 'BookOpen', active: true },
     ],
   },
+
+  {
+    text: 'Phase 2',
+    iconName: 'HomeIcon',
+    subMenu: [
+      {
+        text: 'Phase2 k',
+        iconName: 'BookOpen',
+      },
+      { text: 'Phase1', iconName: 'BookOpen', active: true },
+    ],
+  },
 ]

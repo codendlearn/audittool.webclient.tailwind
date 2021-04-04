@@ -65,7 +65,7 @@ const NavLinkWithsubMenu: React.FC<INavLink> = (props) => {
         >
           <div className='flex flex-col'>
             {props.subMenu.map((c) => (
-              <NavLink {...c} />
+              <NavLink isSubMenu={true} {...c} />
             ))}
           </div>
         </Transition>
