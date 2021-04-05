@@ -19,6 +19,7 @@ const NavLinkWithsubMenu: React.FC<INavLink> = (props) => {
         <div
           className={clsx(
             'flex items-center  justify-between border-l-4 w-full border-transparent py-3 px-2 opacity-60 hover:opacity-100 cursor-pointer',
+            'hover: bg-gradient-to-r hover:from-gray-800  hover:to-gray-900  hover:bg-gray-800  hover:border-gray-300',
             props.subMenu?.some((x) => x.active) &&
               'bg-gradient-to-r from-gray-800 to-gray-900 bg-gray-800 border-gray-300'
           )}

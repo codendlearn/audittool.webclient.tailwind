@@ -5,9 +5,9 @@ export const NavMenu: INavLink[] = [
   {
     text: 'Dashboard',
     path: '/dashboard',
-    active: true,
     iconName: 'Dashboard',
   },
+
   {
     text: 'Phase1',
     iconName: 'HomeIcon',
@@ -27,7 +27,12 @@ export const NavMenu: INavLink[] = [
         text: 'Phase2 k',
         iconName: 'BookOpen',
       },
-      { text: 'Phase1', iconName: 'BookOpen', active: true },
+      { text: 'Phase1', iconName: 'BookOpen' },
     ],
+  },
+  {
+    text: 'Play',
+    path: '/play',
+    iconName: 'Dashboard',
   },
 ]
